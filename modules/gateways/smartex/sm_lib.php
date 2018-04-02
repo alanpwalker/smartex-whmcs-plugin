@@ -24,7 +24,7 @@
  */
 
 require_once 'sm_options.php';
-
+require_once 'version.php';
 /**
  * @param string $contents
  */
@@ -57,7 +57,7 @@ function smCurl($url, $apiKey, $post = false)
         'Content-Type: application/json',
         'Content-Length: ' . $length,
         'Authorization: Basic ' . $uname,
-        'X-Smartex-Plugin-Info: whmcs3',
+        'X-Smartex-Plugin-Info: whmcs'. $version,
     );
 
     curl_setopt($curl, CURLOPT_PORT, 443);
